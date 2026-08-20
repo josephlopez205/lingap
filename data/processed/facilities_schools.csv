@@ -1,0 +1,127 @@
+facility_name,facility_type,school_subtype,coc,address,lat,lng,geocode_precision,barangay
+Balagbag Elementary School,school,Public,K - E,Sitio Balagbag,14.8136634,121.1645671,address_level,San Isidro
+Burgos Elementary School,school,Public,K - E,Mabini St.,14.7167439,121.1371314,address_level,Burgos
+Burgos ES Unit I,school,Public,K - E,Talisay St.,14.718266,121.1407045,address_level,Burgos
+Center for Positive Futures,school,,S - SH,27 J.P. Rizal St. Balite,14.7333473,121.1512199,address_level,Balite
+"College of Arts and Sciences of Asia and the Pacific Rodriguez Rizal, Inc.",school,,K - E - S - SH,"85 Payatas Road, Brgy. San Jose, ",14.7289538,121.1193278,address_level,San Jose
+Divine Saviour Montessori School,school,,K - E - S - SH,"125 J.P. Rizal Ave., Manggahan ",14.7241292,121.1419594,address_level,Manggahan
+Eulogio Rodriguez Jr. ES,school,Public,K - E,J.P. Rizal St.,14.7333473,121.1512199,address_level,Balite
+Geronimo ES,school,Public,K - E,Camia St.,14.7325864,121.1485513,address_level,Geronimo
+Holy Face of Jesus Lyceum of San Jose Inc.,school,,SH,Yakal St. San Jose,14.7234052,121.1176207,address_level,San Jose
+Kasiglahan Village ES,school,Public,K - E,Kasiglahan Village,14.7418885,121.1391811,address_level,San Jose
+Kasiglahan Village ES Unit I,school,Public,K - E,Kasiglahan Village,14.7418885,121.1391811,address_level,San Jose
+Kasiglahan Village Senior High School,school,Public,SH,"Phase 1K2, Kasiglahan Village, San Jose, Rodriguez, Rizal",14.7440324,121.1439101,address_level,San Jose
+Macabud ES,school,Public,K - E,Proper I,14.7965957,121.1397278,address_level,Macabud
+Macabud National High School,school,Public,S,Proper 2,14.7965957,121.1397278,address_level,Macabud
+Macaingalan Elementary School,school,Public,K - E,Sitio Macaingalan,14.8092196,121.2191443,address_level,Puray
+Macaingalan HS,school,Public,S,Sitio Macaingalan,14.8092196,121.2191443,address_level,Puray
+Malasya Uyungan Elementary School,school,Public,K - E,Sitio Malasya Uyungan,14.7443053,121.2518603,address_level,Puray
+Manggahan ES,school,Public,K - E,Millex Road,14.7232175,121.14647,address_level,Manggahan
+Maranatha Christian Academy,school,,K - E - S,78 J.P. Rizal Ave. Manggahan,14.7241292,121.1419594,address_level,Manggahan
+Mascap NHS,school,Public,S,Mascap,14.7633002,121.1832997,address_level,Mascap
+Puray Elementary School,school,Public,K - E,Brgy. Puray,14.7719401,121.2044695,address_level,Puray
+Rodriguez Heights ES,school,Public,K - E,Montalban Heights,14.7483842,121.1206233,address_level,San Jose
+Rural Improvement Club Children Center- Rodriguez Inc. ,school,,K,579 J. Ramos St. Geronimo,14.7347241,121.1486389,address_level,Geronimo
+San Isidro Elementary School,school,Public,K - E,Sitio Tanag,14.7614497,121.1530156,address_level,San Isidro
+San Isidro Labrador Elementary School,school,Public,K - E,Southville 8B,14.7520337,121.1491003,address_level,San Isidro
+San Isidro NHS,school,Public,S,"Sitio Tanag,San Isidro",14.7614497,121.1530156,address_level,San Isidro
+San Jose ES,school,Public,K - E,Narra St.,14.7590114,121.1307332,address_level,San Jose
+San Jose NHS,school,Public,S,Ipil St.,14.7600762,121.1348058,address_level,San Jose
+San Rafael ES,school,Public,K - E,P. Rodriguez St.,14.7315521,121.1577943,address_level,San Rafael
+San Rafael ES - Casili ES,school,Public,K - E,Sitio Casili,14.7012622,121.2109567,address_level,San Rafael
+San Rafael ES - Inigan ES,school,Public,K - E,Sitio Inigan,14.7220447,121.1967851,address_level,San Rafael
+Southville 8 ES,school,Public,K - E,Southville 8,14.7621982,121.1521931,address_level,San Isidro
+Southville 8B NHS,school,Public,S,-Southville 8b,14.7520337,121.1491003,address_level,San Isidro
+Southville 8C ES,school,Public,K - E,"Southville 8C San Isidro Rodriguez,Rizal",14.7621982,121.1521931,address_level,San Isidro
+St. Anne Child Study Center Inc.,school,,K - E,104 C. Reyes St. San Rafael,14.7347358,121.1523863,address_level,San Rafael
+Steps to Ladders School and Activity Center Inc.,school,,K - IE,#73 A. Mabini St. Burgos,14.7167439,121.1371314,address_level,Burgos
+Tagumpay ES,school,Public,K - E,Tagumpay Village,14.7452619,121.132448,address_level,San Jose
+The Eastbridge School,school,,K - E,53 J.P. Rizal Ave. Brgy Manggahan ,14.7241292,121.1419594,address_level,Manggahan
+Valley High Academy,school,,K - E - S - SH,J.P. Rizal Manggahan,14.7241292,121.1419594,address_level,Manggahan
+Virgen del Pilar School,school,,K - E - S - SH,Iloilo St. Burgos,14.7191525,121.1431508,address_level,Burgos
+Wawa ES,school,Public,K - E,Sitio Wawa,14.7304349,121.1852683,address_level,San Rafael
+Asian Institute of Computer Studies,school,,SH,2nd Flr. Montalban Town Center San Jose,14.729702,121.1391392,name_level,San Jose
+Asian Student Christian Foundation Inc.,school,,K,Kasiglahan Main Rd. San Jose,14.7465568,121.1344787,name_level,San Jose
+Burgos National High School,school,Public,S,Daangbakal St.,14.7147126,121.1385985,name_level,Burgos
+Gen. Licerio Geronimo NHS,school,Public,S,#NAME?,14.731947,121.1491519,name_level,Geronimo
+Infant Jesus  Learning Academy of Rodriguez,school,,K - E - S - SH,B2 L2 P7 Eastwood Greenview San Isidro,14.7383478,121.1540542,name_level,San Isidro
+Jolly Children Academic Center,school,,K - E - S,"B33 L45 P1A Kasiglahan Village, San Jose",14.7444612,121.1416441,name_level,San Jose
+Kasiglahan Village NHS,school,Public,S,San Jose Plains,14.7492647,121.1415463,name_level,San Jose
+Manggahan NHS,school,Public,S,"Millex Road Manggahan Rod., Rizal",14.723397,121.143161,name_level,Manggahan
+Mascap National High School-Puray Annex,school,Public,S,Sitio Bagong Sigla,14.7757434,121.2078777,name_level,Puray
+Montalban Heights NHS,school,Public,S,Villa Anna Maria Subdivision,14.7476387,121.1243574,name_level,San Jose
+San Isidro Senior High School,school,Public,SH,"PNP/AFP HOUSING, SAN ISIDRO",14.7487787,121.1582518,name_level,San Isidro
+San Jose - Litex SHS,school,Public,SH,"Lot 1 Block 9 Litex Subdivision, San Jose, Rodriguez, Rizal",14.735593,121.1300181,name_level,San Jose
+Tagumpay NHS,school,Public,S,Tagumpay Compound,14.7453813,121.1312574,name_level,San Jose
+Wawa NHS,school,Public,S,#NAME?,14.7308221,121.1851935,name_level,San Rafael
+St. Anthony Learning Institute of Quezon City Inc. ,school,,K - E - S,"Ph 5 Blk 7 Eastwood Residences, San Isidro",14.70592194,121.0958478,address_level,San Isidro
+Precious Little Lights Academy of Rodriguez Inc,school,,K - E,B5 L8 St. Peter Extn. King David Subd. Burgos,14.71069581,121.1383011,address_level,Burgos
+"Gain Christian Academy of Montalban, Inc.",school,,K - E - S,Apo St. Extension Metro Montaña Subd.  Burgos,14.71267932,121.1408777,address_level,Burgos
+St. Edith Academy Inc. ,school,,K - IE,"14 Arayat St. Montaña, Burgos",14.71288772,121.1375782,address_level,Burgos
+"St. Mary Magdalene Academy, Inc.",school,,K - E - S,"B16 L11 Kanlaon St. Montaña, Burgos",14.71361578,121.137992,address_level,Burgos
+Angeli Gilbert Christian Academy (fr. Angeli Tutorial & Child Care Ctr),school,,K - IE,"L5 B14 Cordillera St. Montaña Subd., Burgos",14.71457447,121.1395168,address_level,Burgos
+Wise Steward  Christian School Inc.,school,,K - IE,"Blk. 13 Lot2 Estrella Heights Subd., Burgos",14.71562999,121.1333317,address_level,Burgos
+"Christ the Foundation Christian Academy, Inc.",school,,K - E - S - SH,"Marang Rd., Ocampo Cmpd., Burgos",14.71630538,121.1402329,address_level,Burgos
+Joyful Child of Caren School ,school,,K,23 Señor de Burgos Subd. Burgos,14.71918381,121.1398221,address_level,Burgos
+Gentle Kiddie Learning Academy Inc,school,,K - E,B12 L1 & 3 Dela Costa Homes V. Burgos ,14.71967894,121.1319925,address_level,Burgos
+Holy Family Montessori School of Rodriguez,school,,K - E - IS,"Lawaan St., corner Tanguile St. San Jose",14.72633474,121.1339913,address_level,San Jose
+Roosevelt College - Rodriguez (fr. Roosevelt Mem'l High School),school,,K - E - S - SH,Lardizabal St. Manggahan,14.72823962,121.1402702,address_level,Manggahan
+Thinking Tykes Academy Inc. former: Thinking Tykes Learning Center Inc. ,school,,K,"Blk. 19 Lot 2 Sorrento Village, Burgos",14.72887178,121.144198,address_level,Burgos
+"Dreamers Creative Brains Academy, Inc.",school,,K - E,"#069 Espiritu Subd., Tobleron Balite (Pob.),",14.72997667,121.1485075,address_level,Balite
+Creative Steps  Preschool,school,,K,"34 Cortijos Subd. San Vicente, San Rafael",14.73105136,121.1603382,address_level,San Rafael
+St. Joseph's College of Rodriguez Inc. ,school,,K - E - S - SH,498 M.H. Del Pilar St. Brgy. San Rafael,14.73452049,121.159186,address_level,San Rafael
+"Thrones Rainbow Angel Workshop, Inc.",school,,K - E,"B3 L3 Orlon St. corner Vonel St., Litex Village, San Jose",14.73512792,121.1298716,address_level,San Jose
+Froebelian College of Science & Technology,school,,K - E,"B10-A Lot 3, 4 & 5Nylon St. Litex Vill. San Jose",14.73648029,121.1283203,address_level,San Jose
+The Living Epistle Christian Academy - Rizal Inc.,school,,K - E - S,"B25 L 1-4 Centella Homes, San Isidro",14.73946572,121.1511453,address_level,San Isidro
+"Light of Hope Christian Academy in Philippines, Inc. (former Light of Hope Christian Learning Center, Inc.)",school,,K - E - S,"Blk. 14 Lot 61 Ph.1K Kasiglahan Village, San Jose",14.73988795,121.1440056,address_level,San Jose
+St. Virginia Academy Corporation,school,,K - IE,Lot 20 Blk. 5 Teachers Village Manggahan,14.74025325,121.1604461,address_level,Manggahan
+FIAT Center for Global Learners Corp.,school,,K - IE,"P5 B12A L14 Centella Homes, San Isidro",14.74104365,121.1531547,address_level,San Isidro
+FASC Creative Learning School Inc. ,school,,K - IE,"Blk 9B Lot 21 Centella Homes, Brgy. San Isidro",14.7410659,121.1526806,address_level,San Isidro
+Abelard Integrated School Corp.,school,,K - IE,Blk. 11 Lot 7 Eastwind Homes Ph2 San Isidro,14.74108481,121.1548835,address_level,San Isidro
+Productive Learners Christian Academy,school,,K - E,"B20 L7 Ph2 Eastwood Greenview, San Isidro",14.7412611,121.1653461,address_level,San Isidro
+Great Goal Learning Center,school,,K - E,"P1 B1 L47 Eastwood Greenview, San Isidro",14.7419154,121.1613729,address_level,San Isidro
+San Rafael ES - Catmon ES,school,Public,K - E,Sitio Katwiran,14.74224713,121.1679708,address_level,San Rafael
+St. Nazareth Learning Center of Rodriguez Rizal Inc. ,school,,K - E - IS,"Blk 6 Lot 157 Ph 4 Centella Homes, San Isidro",14.74228029,121.1492503,address_level,San Isidro
+ABC Legacy Academy Corporation,school,,K - E,"Block 12 Lot 20 Phase 1 Eastwood Greenview, San Isidro (Montalban), Rodriguez, Rizal",14.74312593,121.1613761,address_level,San Isidro
+Amityville ES,school,Public,K - E,Villa Ana Maria Subd.,14.74566116,121.129365,address_level,San Jose
+Papaya Academy Inc.,school,,K - E,Kasiglahan Main Rd. San Jose,14.74689543,121.1345971,address_level,San Jose
+"Faith Christian Academy of Rodriguez, Rizal Inc.",school,,K - E - S,"B6 L11 P1-C Kasiglahan Village I, San Jose",14.74742282,121.1387902,address_level,San Jose
+Domus Angeli Academy Inc.  ,school,,K - E,"Ph. 1 Blk 3 Lot 101 Green Breeze Subdivision, San Isidro",14.74742733,121.1618378,address_level,San Isidro
+"Louisian Learning Academy, Inc. ",school,,K - E,"Ph1 Blk 34 Lot 19 Eastwood Residences, San Isidro",14.74808296,121.1626101,address_level,San Isidro
+Mizrachs Learning School of Rodriguez Rizal Inc.,school,,K - E,"2nd Flr. JHP Bldg. Amity Ville, San Jose",14.7481556,121.1314028,address_level,San Jose
+Southville 8B Senior High School,school,Public,SH,"Laylayan, San Isidro Rodriguez, Rizal",14.74834154,121.1516961,address_level,San Isidro
+"Frames of Mind School of Montalban, Inc. ",school,,K - E - S,44 Canlaon St. Amityville Subd. ,14.74885182,121.1291179,address_level,San Jose
+EBBC Christian Academy,school,,K - E,Sta. Teresita St. VRV Subd. San Jose ,14.74888098,121.1217791,address_level,San Jose
+Eastwood Integrated School,school,,K - E,"Lot 1, Blk. 3, Ph. 4 Eastwood Residences",14.74982186,121.1601719,address_level,San Isidro
+OB Christian Community School Inc.,school,,K - E - IS,"Blk. 17 Lot 27 Amityville Subd., Brgy. San Jose",14.75007762,121.1301447,address_level,San Jose
+Le Mara Learning Academy Inc.,school,,K - E,B23 L28 P4 Eastwood Residences Brgy. San Isidro,14.7504789,121.1590498,address_level,San Isidro
+Kiddielamp Learning Center ,school,,K,Blk. 18 Lot 115-116 Soutville 8 C Brgy. San Isidro,14.75272464,121.1445353,address_level,San Isidro
+Whole Brain School Inc.,school,,K - IE,Blk. 2 Phase 1 LL San Isidro,14.75310368,121.142358,address_level,San Isidro
+San Isidro Grace Christian School Inc.,school,,K - IE,Lot 23 Blk. 2 PSD 56216 Sitio Barangay San Isidro,14.75470021,121.1455451,address_level,San Isidro
+"Greenfield Academy of Eastwood, Inc. ",school,,K - E - S,"P6 B19 L6 Eastwood Residences, San Isidro",14.75610739,121.1580763,address_level,San Isidro
+Eastwood Integrated School of Montalban Inc. ,school,,K - IE,Lot 18 Blk. 31 Ph. 6 Eastwood Residence,14.75631963,121.15547,address_level,San Isidro
+Eastwood Integrated School of Montalban Inc. ,school,,K - IE,Lot 45 Blk. 1 Ph. 9 Eastwood Residences,14.75631963,121.15547,address_level,San Isidro
+Southville 8C NHS,school,Public,S,Blk 12 Lot 36 Ph 1N Southville 8c San Isidro,14.75672251,121.1446435,address_level,San Isidro
+A Kernel of Wheat Christian Mission Academy Inc.,school,,K - E,Blk. 2 L136 B Suburban Caksa Upper San Isidro,14.75697347,121.1401853,address_level,San Isidro
+St. Joseph Christian Academy (Macabud) Inc.,school,,K - E,"Licao - Licao, Macabud",14.76268835,121.148699,address_level,Macabud
+Mascap ES,school,Public,K - E,Mascap Proper,14.76269942,121.1833854,address_level,Mascap
+Basecamp Elementary School,school,Public,K - E,Sitio Basecamp,14.78301929,121.168202,address_level,San Isidro
+"Blossomland Preparatory Christian School, Inc.",school,,K,B34 L5-9 dela Costa Homes V Brgy. Burgos,,,town_center_fallback,Burgos
+Bridgeview Learning Center,school,,K,625 Tobleron St. Espiritu Brgy. Manggahan,,,town_center_fallback,Manggahan
+Children's Mission Philippines Hills of Grace Foundation Inc.,school,,K,"0014 F. Rodriguez Ave. Corner E. Rodriguez Ave. Brgy. San Jose, Rodriguez, Rizal",,,town_center_fallback,San Jose
+Christian Family Centre School Foundation Inc.,school,,K - E,"B1 L37-39 P1 L1 Suburban Housing Project,  San Jose",,,town_center_fallback,San Jose
+Domus Angeli Learning Center,school,,K - IE,"B21, L35 Eastwood Residences, San Isidro",,,town_center_fallback,San Isidro
+GATC Integrated School for Kindergarten ,school,,K - IE,"Ph 2 Blk 11 Lot 124 Ph 2 Eastwind Homes, San Isidro",,,town_center_fallback,San Isidro
+Great Start Childrens Development School ,school,,K,Blk 2 Lot 13 Montavilla Subd. Burgos,,,town_center_fallback,Burgos
+Hosea Christian Montessori School of Mindoro Occidental Inc. (Fr: 7Flames Christian Mission School Inc.) ,school,,K,"Ph6 Lot 2 Blk. 1 Eastwood Greenview, San Isidro",,,town_center_fallback,San Isidro
+Kids Ladder Christian Academy Inc.,school,,K,"Ph 2 Blk 11 L3 dela Costa V, Burgos ",,,town_center_fallback,Burgos
+Mascap ES - Magalipit Elem.,school,Public,K - E,Sitio Magalipit,,,town_center_fallback,Mascap
+Me and J Christian Academy Inc,school,,K - IE,"Daang Tubo Ph I, Marang Rd. Burgos",,,town_center_fallback,Burgos
+Melvinshire Learning Center ,school,,K - IE,"Blk 6 Lot 51 Suburban Village Ph 1  L1, San Jose",,,town_center_fallback,San Jose
+Rural Improvement Club Children Center- Rodriguez Inc. ,school,,K,"Blk. 20 Lot 21 Jade St. Summit View, San Rafael",,,town_center_fallback,San Rafael
+Rural Improvement Club Children Center- Rodriguez Inc. ,school,,K,242 J.P. Rizal St. Manggahan,,,town_center_fallback,Manggahan
+Sophia Grace Learning Center Inc.,school,,K,Blk. 1 Lot 24Summer View Subd. San Rafael,,,town_center_fallback,San Rafael
+St. Margarette Integrated Learning School Inc.,school,,K - E - S,B9 L11 Summitview Subd. San Rafael,,,town_center_fallback,San Rafael
+St. Mary's School of Novaliches Inc. ,school,,K - E - S,"Blk 13 Lot 34 Mulawin cor. Narra Sts., San Jose",,,town_center_fallback,San Jose
+Victoriouz Kids Academy Inc. ,school,,K - IE,"Blk 9 Lot 7 1-A Kasiglahan Village, San Jose",,,town_center_fallback,San Jose
+Victoriouz Kids Academy Inc. ,school,,K - E,"Blk 9 Lot 7 Ph1A Kasiglahan Vill. Rodriguez, Rizal",,,town_center_fallback,San Jose
