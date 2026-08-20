@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: lingap_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: lingap
+      POSTGRES_PASSWORD: lingap_dev_pw
+      POSTGRES_DB: lingap
+    ports:
+      - "5432:5432"
+    volumes:
+      - lingap_pgdata:/var/lib/postgresql/data
+
+volumes:
+  lingap_pgdata:

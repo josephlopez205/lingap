@@ -1,0 +1,16 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Data (raw source files can be large/sensitive — decide per-source)
+data/raw/*
+!data/raw/.gitkeep
+
+# OS
+.DS_Store
