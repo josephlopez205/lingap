@@ -1,7 +1,6 @@
 # Lingap
 
 ## Setup
-## Setup
 1. Install PostgreSQL 16 + PostGIS locally (see docs/SETUP.md for OS-specific steps)
 2. Create the `lingap` DB/user and run `CREATE EXTENSION postgis;`
 3. `cd backend && python3 -m venv venv && source venv/bin/activate`
