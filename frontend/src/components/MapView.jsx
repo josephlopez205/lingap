@@ -5,6 +5,7 @@ import L from 'leaflet'
 import icon from 'leaflet/dist/images/marker-icon.png'
 import iconShadow from 'leaflet/dist/images/marker-shadow.png'
 import 'leaflet/dist/leaflet.css'
+import LayerPanel, { initialLayerState } from './LayerPanel'
 
 // Fix Leaflet's default marker icon path under Vite bundling
 delete L.Icon.Default.prototype._getIconUrl
@@ -33,7 +34,6 @@ const boundaryStyle = {
  */
 function FitBoundsOnLoad({ bbox }) {
   const map = useMap()
-
   useEffect(() => {
     if (!bbox) return
     const leafletBounds = [
@@ -42,7 +42,6 @@ function FitBoundsOnLoad({ bbox }) {
     ]
     map.fitBounds(leafletBounds)
   }, [bbox, map])
-
   return null   // this component renders nothing visually, it just triggers a side effect
 }
 
@@ -51,6 +50,9 @@ function MapView() {
   const [bbox, setBbox] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+  // NEW: layer toggle state, lifted here so it can control what renders on the map
+  const [activeLayers, setActiveLayers] = useState(initialLayerState)
 
   useEffect(() => {
     fetch(`${API_BASE}/api/lgu/${LGU_ID}/boundaries`)
@@ -99,7 +101,14 @@ function MapView() {
           <GeoJSON data={boundaries} style={boundaryStyle} />
         )}
         {bbox && <FitBoundsOnLoad bbox={bbox} />}
+
+        {/* Choropleth/facility layers will be added here in the next step,
+            each conditionally rendered based on activeLayers.<key> */}
       </MapContainer>
+
+      {/* LayerPanel sits OUTSIDE MapContainer as a plain HTML overlay,
+          positioned absolutely via its own internal styles */}
+      <LayerPanel activeLayers={activeLayers} setActiveLayers={setActiveLayers} />
     </div>
   )
 }
