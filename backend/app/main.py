@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import lgu
+from app.routers import lgu, barangay
 
 app = FastAPI(title="LINGAP API")
 
@@ -15,6 +15,7 @@ app.add_middleware(
 )
 
 app.include_router(lgu.router)
+app.include_router(barangay.router)
 
 @app.get("/health")
 def health():

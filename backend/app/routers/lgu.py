@@ -66,3 +66,38 @@ def get_lgu_boundaries(lgu_id: int, db: Session = Depends(get_db)):
         **feature_collection,
         "bbox": bbox
     }
+
+@router.get("/{lgu_id}/facilities")
+def get_lgu_facilities(lgu_id: int, db: Session = Depends(get_db)):
+    rows = db.execute(
+        text("""
+            SELECT f.facility_id, f.facility_name, f.facility_type, f.capacity, f.barangay_id,
+                   ST_AsGeoJSON(f.geom) as geom
+            FROM facilities f
+            JOIN barangays b ON f.barangay_id = b.barangay_id
+            WHERE b.lgu_id = :lgu_id
+        """),
+        {"lgu_id": lgu_id}
+    ).fetchall()
+
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"No facilities found for lgu_id={lgu_id}")
+
+    features = []
+    for row in rows:
+        features.append({
+            "type": "Feature",
+            "properties": {
+                "facility_id": row.facility_id,
+                "facility_name": row.facility_name,
+                "facility_type": row.facility_type,
+                "capacity": row.capacity,
+                "barangay_id": row.barangay_id
+            },
+            "geometry": json.loads(row.geom)
+        })
+
+    return {
+        "type": "FeatureCollection",
+        "features": features
+    }
