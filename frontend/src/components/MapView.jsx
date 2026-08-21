@@ -99,7 +99,7 @@ function MapView() {
 
         {/* Conditionally rendered layer stubs — each mounts/unmounts based on its checkbox */}
         {activeLayers.populationLevels && <PopulationLevelsLayer />}
-        {activeLayers.povertyIncidence && <PovertyIncidenceLayer />}
+        {/* activeLayers.povertyIncidence && <PovertyIncidenceLayer /> */}
         {activeLayers.healthFacilities && <HealthFacilitiesLayer />}
         {activeLayers.educationFacilities && <EducationFacilitiesLayer />}
       </MapContainer>

@@ -2,7 +2,7 @@
 
 const LAYER_CONFIG = [
   { key: 'populationLevels', label: 'Population Levels' },
-  { key: 'povertyIncidence', label: 'Poverty Incidence' },
+  // { key: 'povertyIncidence', label: 'Poverty Incidence' },
   { key: 'healthFacilities', label: 'Health Facilities' },
   { key: 'educationFacilities', label: 'Education Facilities' },
 ]

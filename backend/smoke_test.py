@@ -34,7 +34,6 @@ def test_boundaries():
         check("bbox has all 4 fields, no None", all(
             bbox.get(k) is not None for k in ["min_lng", "min_lat", "max_lng", "max_lat"]
         ))
-        # Sanity range check for Philippines
         check("bbox lng in PH range (117-127)", 117 <= bbox["min_lng"] <= 127 and 117 <= bbox["max_lng"] <= 127,
               f"(min_lng={bbox.get('min_lng')}, max_lng={bbox.get('max_lng')})")
         check("bbox lat in PH range (4-21)", 4 <= bbox["min_lat"] <= 21 and 4 <= bbox["max_lat"] <= 21,
@@ -43,7 +42,8 @@ def test_boundaries():
         f0 = data["features"][0]
         check("Feature has barangay_id + name", "barangay_id" in f0["properties"] and "name" in f0["properties"])
         check("Feature geometry is Polygon/MultiPolygon", f0["geometry"]["type"] in ("Polygon", "MultiPolygon"))
-    # 404 path
+        check("Feature has population_total field", "population_total" in f0["properties"])
+        check("Feature has poverty_incidence_pct field", "poverty_incidence_pct" in f0["properties"])
     r404 = requests.get(f"{BASE_URL}/api/lgu/999999/boundaries")
     check("Unknown lgu_id returns 404", r404.status_code == 404)
 

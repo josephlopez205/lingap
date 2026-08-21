@@ -8,15 +8,15 @@ from app.db import get_db
 
 router = APIRouter(prefix="/api/lgu", tags=["lgu"])
 
-
 @router.get("/{lgu_id}/boundaries")
 def get_lgu_boundaries(lgu_id: int, db: Session = Depends(get_db)):
-    # 1. Fetch barangay geometries
     rows = db.execute(
         text("""
-            SELECT barangay_id, name, ST_AsGeoJSON(geom) as geom
-            FROM barangays
-            WHERE lgu_id = :lgu_id
+            SELECT b.barangay_id, b.name, ST_AsGeoJSON(b.geom) as geom,
+                   d.population_total, d.poverty_incidence_pct
+            FROM barangays b
+            LEFT JOIN demographics d ON b.barangay_id = d.barangay_id
+            WHERE b.lgu_id = :lgu_id
         """),
         {"lgu_id": lgu_id}
     ).fetchall()
@@ -24,16 +24,17 @@ def get_lgu_boundaries(lgu_id: int, db: Session = Depends(get_db)):
     if not rows:
         raise HTTPException(status_code=404, detail=f"No barangays found for lgu_id={lgu_id}")
 
-    # 2. Assemble FeatureCollection
     features = []
     for row in rows:
         features.append({
             "type": "Feature",
             "properties": {
                 "barangay_id": row.barangay_id,
-                "name": row.name
+                "name": row.name,
+                "population_total": row.population_total,
+                "poverty_incidence_pct": float(row.poverty_incidence_pct) if row.poverty_incidence_pct is not None else None,
             },
-            "geometry": json.loads(row.geom)  # geom comes back as a JSON string, parse it
+            "geometry": json.loads(row.geom)
         })
 
     feature_collection = {
@@ -41,7 +42,6 @@ def get_lgu_boundaries(lgu_id: int, db: Session = Depends(get_db)):
         "features": features
     }
 
-    # 3. Compute bounding box
     bbox_row = db.execute(
         text("""
             SELECT ST_XMin(ST_Extent(geom)) as min_lng,
@@ -61,7 +61,6 @@ def get_lgu_boundaries(lgu_id: int, db: Session = Depends(get_db)):
         "max_lat": bbox_row.max_lat
     }
 
-    # 4. Return combined response
     return {
         **feature_collection,
         "bbox": bbox
