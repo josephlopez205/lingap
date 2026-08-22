@@ -98,7 +98,7 @@ function MapView() {
         {bbox && <FitBoundsOnLoad bbox={bbox} />}
 
         {/* Conditionally rendered layer stubs — each mounts/unmounts based on its checkbox */}
-        {activeLayers.populationLevels && <PopulationLevelsLayer />}
+        {activeLayers.populationLevels && <PopulationLevelsLayer boundaries={boundaries} />}
         {/* activeLayers.povertyIncidence && <PovertyIncidenceLayer /> */}
         {activeLayers.healthFacilities && <HealthFacilitiesLayer />}
         {activeLayers.educationFacilities && <EducationFacilitiesLayer />}
