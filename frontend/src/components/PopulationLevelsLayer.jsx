@@ -1,6 +1,7 @@
 // src/components/PopulationLevelsLayer.jsx
 import { GeoJSON } from 'react-leaflet'
 import { jenks } from 'simple-statistics'
+import Legend from './Legend'
 
 const COLOR_RAMP = ['#deebf7', '#9ecae1', '#4292c6', '#2171b5', '#08519c']
 
@@ -33,24 +34,23 @@ function PopulationLevelsLayer({ boundaries }) {
   const numClasses = Math.min(5, populationValues.length)
   const breaks = jenks(populationValues, numClasses)
 
-  // style function — react-leaflet calls this once PER FEATURE automatically
   const styleByPopulation = (feature) => {
     const value = feature.properties.population_total
     const fillColor = getColorForValue(value, breaks, COLOR_RAMP)
     return {
       fillColor,
       fillOpacity: 0.7,
-      color: '#555555',   // outline color — darker grey so boundaries stay visible over the fill
+      color: '#555555',
       weight: 1,
       opacity: 0.8,
     }
   }
 
   return (
-    <GeoJSON
-      data={boundaries}
-      style={styleByPopulation}
-    />
+    <>
+      <GeoJSON data={boundaries} style={styleByPopulation} />
+      <Legend title="Population" breaks={breaks} colorRamp={COLOR_RAMP} position="bottom-right" />
+    </>
   )
 }
 
