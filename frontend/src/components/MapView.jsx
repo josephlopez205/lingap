@@ -11,7 +11,9 @@ import LayerPanel, { initialLayerState } from './LayerPanel'
 import PopulationLevelsLayer from './PopulationLevelsLayer'
 import HealthFacilitiesLayer from './HealthFacilitiesLayer'
 import EducationFacilitiesLayer from './EducationFacilitiesLayer'
+import DetailPanel from './DetailPanel'
 
+// Fix Leaflet's default marker icon path under Vite bundling
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
   iconUrl: icon,
@@ -21,6 +23,7 @@ L.Icon.Default.mergeOptions({
 const API_BASE = 'http://localhost:8000'
 const LGU_ID = 1
 
+// Style for barangay boundary polygons: transparent fill, dark outline
 const boundaryStyle = {
   fillColor: '#000000',
   fillOpacity: 0,
@@ -29,6 +32,10 @@ const boundaryStyle = {
   opacity: 0.8,
 }
 
+/**
+ * Sub-component that has access to the Leaflet map instance via useMap().
+ * Must live INSIDE <MapContainer>.
+ */
 function FitBoundsOnLoad({ bbox }) {
   const map = useMap()
   useEffect(() => {
@@ -48,12 +55,14 @@ function MapView() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [activeLayers, setActiveLayers] = useState(initialLayerState)
-  const [selectedBarangay, setSelectedBarangay] = useState(null) // NEW
+  const [selectedBarangay, setSelectedBarangay] = useState(null)
 
   useEffect(() => {
     fetch(`${API_BASE}/api/lgu/${LGU_ID}/boundaries`)
       .then((res) => {
-        if (!res.ok) throw new Error(`Server responded with ${res.status}`)
+        if (!res.ok) {
+          throw new Error(`Server responded with ${res.status}`)
+        }
         return res.json()
       })
       .then((data) => {
@@ -68,12 +77,11 @@ function MapView() {
       })
   }, [])
 
-  // NEW: click handler bound to each barangay polygon
+  // Click handler bound to each barangay polygon
   const onEachBarangay = (feature, layer) => {
     layer.on({
       click: () => {
         setSelectedBarangay(feature.properties.barangay_id)
-	console.log('Selected barangay_id:', feature.properties.barangay_id)
       },
     })
   }
@@ -102,20 +110,27 @@ function MapView() {
           attribution='&copy; OpenStreetMap contributors'
         />
         {boundaries && (
-          <GeoJSON data={boundaries} style={boundaryStyle} onEachFeature={onEachBarangay} />
+          <GeoJSON
+            data={boundaries}
+            style={boundaryStyle}
+            onEachFeature={onEachBarangay}
+          />
         )}
         {bbox && <FitBoundsOnLoad bbox={bbox} />}
 
         {activeLayers.populationLevels && (
-		<PopulationLevelsLayer boundaries={boundaries} onEachFeature={onEachBarangay} />
-	)}
+          <PopulationLevelsLayer boundaries={boundaries} onEachFeature={onEachBarangay} />
+        )}
         {activeLayers.healthFacilities && <HealthFacilitiesLayer />}
         {activeLayers.educationFacilities && <EducationFacilitiesLayer />}
       </MapContainer>
 
       <LayerPanel activeLayers={activeLayers} setActiveLayers={setActiveLayers} />
 
-      {/* DetailPanel will go here in Step 6b, reading selectedBarangay */}
+      <DetailPanel
+        selectedBarangay={selectedBarangay}
+        onClose={() => setSelectedBarangay(null)}
+      />
     </div>
   )
 }
