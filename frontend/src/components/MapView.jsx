@@ -10,6 +10,8 @@ import PopulationLevelsLayer from './PopulationLevelsLayer'
 import PovertyIncidenceLayer from './PovertyIncidenceLayer'
 import HealthFacilitiesLayer from './HealthFacilitiesLayer'
 import EducationFacilitiesLayer from './EducationFacilitiesLayer'
+import 'react-leaflet-cluster/dist/assets/MarkerCluster.css'
+import 'react-leaflet-cluster/dist/assets/MarkerCluster.Default.css'
 
 // Fix Leaflet's default marker icon path under Vite bundling
 delete L.Icon.Default.prototype._getIconUrl
