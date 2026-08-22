@@ -13,7 +13,6 @@ import HealthFacilitiesLayer from './HealthFacilitiesLayer'
 import EducationFacilitiesLayer from './EducationFacilitiesLayer'
 import DetailPanel from './DetailPanel'
 
-// Fix Leaflet's default marker icon path under Vite bundling
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
   iconUrl: icon,
@@ -23,7 +22,6 @@ L.Icon.Default.mergeOptions({
 const API_BASE = 'http://localhost:8000'
 const LGU_ID = 1
 
-// Style for barangay boundary polygons: transparent fill, dark outline
 const boundaryStyle = {
   fillColor: '#000000',
   fillOpacity: 0,
@@ -32,10 +30,13 @@ const boundaryStyle = {
   opacity: 0.8,
 }
 
-/**
- * Sub-component that has access to the Leaflet map instance via useMap().
- * Must live INSIDE <MapContainer>.
- */
+const highlightStyle = {
+  weight: 4,
+  color: 'yellow',
+  opacity: 1,
+  fillOpacity: 0.3,
+}
+
 function FitBoundsOnLoad({ bbox }) {
   const map = useMap()
   useEffect(() => {
@@ -56,6 +57,7 @@ function MapView() {
   const [error, setError] = useState(null)
   const [activeLayers, setActiveLayers] = useState(initialLayerState)
   const [selectedBarangay, setSelectedBarangay] = useState(null)
+  const highlightedLayerRef = useRef(null)
 
   useEffect(() => {
     fetch(`${API_BASE}/api/lgu/${LGU_ID}/boundaries`)
@@ -77,10 +79,16 @@ function MapView() {
       })
   }, [])
 
-  // Click handler bound to each barangay polygon
   const onEachBarangay = (feature, layer) => {
     layer.on({
       click: () => {
+        if (highlightedLayerRef.current) {
+          highlightedLayerRef.current.setStyle(boundaryStyle)
+        }
+        layer.setStyle(highlightStyle)
+	layer.bringToFront()
+        highlightedLayerRef.current = layer
+
         setSelectedBarangay(feature.properties.barangay_id)
       },
     })
