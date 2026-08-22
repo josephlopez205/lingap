@@ -2,7 +2,6 @@
 import { GeoJSON } from 'react-leaflet'
 import { jenks } from 'simple-statistics'
 import Legend from './Legend'
-import MarkerClusterGroup from 'react-leaflet-cluster'
 
 const COLOR_RAMP = ['#deebf7', '#9ecae1', '#4292c6', '#2171b5', '#08519c']
 
@@ -18,7 +17,7 @@ function getColorForValue(value, breaks, colorRamp) {
   return colorRamp[colorRamp.length - 1]
 }
 
-function PopulationLevelsLayer({ boundaries }) {
+function PopulationLevelsLayer({ boundaries, onEachFeature }) {   // NEW prop
   if (!boundaries || !boundaries.features || boundaries.features.length === 0) {
     return null
   }
@@ -49,7 +48,11 @@ function PopulationLevelsLayer({ boundaries }) {
 
   return (
     <>
-      <GeoJSON data={boundaries} style={styleByPopulation} />
+      <GeoJSON
+        data={boundaries}
+        style={styleByPopulation}
+        onEachFeature={onEachFeature}   // NEW — same click handler as the base layer
+      />
       <Legend title="Population" breaks={breaks} colorRamp={COLOR_RAMP} position="bottom-right" />
     </>
   )

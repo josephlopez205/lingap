@@ -49,7 +49,7 @@ function PovertyIncidenceLayer({ boundaries }) {
 
   return (
     <>
-      <GeoJSON data={boundaries} style={styleByPoverty} />
+      <GeoJSON data={boundaries} style={styleByPoverty} onEachFeature={onEachFeature}/>
       <Legend title="Poverty Incidence (%)" breaks={breaks} colorRamp={COLOR_RAMP} position="bottom-right" />
     </>
   )

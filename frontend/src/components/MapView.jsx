@@ -5,15 +5,13 @@ import L from 'leaflet'
 import icon from 'leaflet/dist/images/marker-icon.png'
 import iconShadow from 'leaflet/dist/images/marker-shadow.png'
 import 'leaflet/dist/leaflet.css'
-import LayerPanel, { initialLayerState } from './LayerPanel'
-import PopulationLevelsLayer from './PopulationLevelsLayer'
-import PovertyIncidenceLayer from './PovertyIncidenceLayer'
-import HealthFacilitiesLayer from './HealthFacilitiesLayer'
-import EducationFacilitiesLayer from './EducationFacilitiesLayer'
 import 'react-leaflet-cluster/dist/assets/MarkerCluster.css'
 import 'react-leaflet-cluster/dist/assets/MarkerCluster.Default.css'
+import LayerPanel, { initialLayerState } from './LayerPanel'
+import PopulationLevelsLayer from './PopulationLevelsLayer'
+import HealthFacilitiesLayer from './HealthFacilitiesLayer'
+import EducationFacilitiesLayer from './EducationFacilitiesLayer'
 
-// Fix Leaflet's default marker icon path under Vite bundling
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
   iconUrl: icon,
@@ -50,13 +48,12 @@ function MapView() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [activeLayers, setActiveLayers] = useState(initialLayerState)
+  const [selectedBarangay, setSelectedBarangay] = useState(null) // NEW
 
   useEffect(() => {
     fetch(`${API_BASE}/api/lgu/${LGU_ID}/boundaries`)
       .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Server responded with ${res.status}`)
-        }
+        if (!res.ok) throw new Error(`Server responded with ${res.status}`)
         return res.json()
       })
       .then((data) => {
@@ -70,6 +67,16 @@ function MapView() {
         setLoading(false)
       })
   }, [])
+
+  // NEW: click handler bound to each barangay polygon
+  const onEachBarangay = (feature, layer) => {
+    layer.on({
+      click: () => {
+        setSelectedBarangay(feature.properties.barangay_id)
+	console.log('Selected barangay_id:', feature.properties.barangay_id)
+      },
+    })
+  }
 
   if (loading) {
     return <div style={{ padding: '2rem' }}>Loading map…</div>
@@ -95,18 +102,20 @@ function MapView() {
           attribution='&copy; OpenStreetMap contributors'
         />
         {boundaries && (
-          <GeoJSON data={boundaries} style={boundaryStyle} />
+          <GeoJSON data={boundaries} style={boundaryStyle} onEachFeature={onEachBarangay} />
         )}
         {bbox && <FitBoundsOnLoad bbox={bbox} />}
 
-        {/* Conditionally rendered layer stubs — each mounts/unmounts based on its checkbox */}
-        {activeLayers.populationLevels && <PopulationLevelsLayer boundaries={boundaries} />}
-        {/* activeLayers.povertyIncidence && <PovertyIncidenceLayer /> */}
+        {activeLayers.populationLevels && (
+		<PopulationLevelsLayer boundaries={boundaries} onEachFeature={onEachBarangay} />
+	)}
         {activeLayers.healthFacilities && <HealthFacilitiesLayer />}
         {activeLayers.educationFacilities && <EducationFacilitiesLayer />}
       </MapContainer>
 
       <LayerPanel activeLayers={activeLayers} setActiveLayers={setActiveLayers} />
+
+      {/* DetailPanel will go here in Step 6b, reading selectedBarangay */}
     </div>
   )
 }
