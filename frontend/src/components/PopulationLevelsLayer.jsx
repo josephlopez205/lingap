@@ -2,6 +2,7 @@
 import { GeoJSON } from 'react-leaflet'
 import { jenks } from 'simple-statistics'
 import Legend from './Legend'
+import MarkerClusterGroup from 'react-leaflet-cluster'
 
 const COLOR_RAMP = ['#deebf7', '#9ecae1', '#4292c6', '#2171b5', '#08519c']
 
