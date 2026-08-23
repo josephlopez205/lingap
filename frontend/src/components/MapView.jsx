@@ -1,5 +1,5 @@
 // src/components/MapView.jsx
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
 import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import icon from 'leaflet/dist/images/marker-icon.png'
@@ -82,10 +82,17 @@ function MapView() {
   const onEachBarangay = (feature, layer) => {
     layer.on({
       click: () => {
-        if (highlightedLayerRef.current) {
-          highlightedLayerRef.current.setStyle(boundaryStyle)
+        if (highlightedLayerRef.current && highlightedLayerRef.current._lingapOriginalStyle) {
+          highlightedLayerRef.current.setStyle(highlightedLayerRef.current._lingapOriginalStyle)
         }
-        layer.setStyle(highlightStyle)
+	
+	layer._lingapOriginalStyle = { ...layer.options }
+	layer.setStyle({
+	  ...layer.options,
+	  weight: 4,
+	  color: '#ffff00',
+	  opacity: 1,
+	})
 	layer.bringToFront()
         highlightedLayerRef.current = layer
 
