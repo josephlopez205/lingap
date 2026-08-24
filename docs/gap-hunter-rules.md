@@ -66,3 +66,11 @@ Methodology footnote (for detail cards / reports):
 "Gap analysis uses total population as an access-need proxy. Age-specific
 and enrollment-specific breakdowns will be incorporated pending PSA data
 availability for this municipality."
+
+## Test Validation (Phase 3)
+Confirmed via end-to-end test on [today's date]:
+- `POST /api/lgu/1/gaps/analyze` → `{"gaps_found": 3}`
+- Puray flagged for both Health and Education (pop 3,683; 6.01km/5.57km)
+- Mascap flagged for Health only (pop 5,436; 3.28km)
+- Severity scores verified by manual calculation against the documented formula
+- Idempotency confirmed: re-running analysis does not duplicate gap rows
