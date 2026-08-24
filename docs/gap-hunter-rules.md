@@ -46,10 +46,11 @@ severity_score = (0.6 × pop_component) + (0.4 × deficit_component)
 
 
 ## Thresholds (tunable, set based on pilot LGU's actual distribution)
-- `HEALTH_POPULATION_THRESHOLD` = 10000
-- `EDUCATION_POPULATION_THRESHOLD` = 10000
-- `DISTANCE_THRESHOLD_KM` = 3.0 (kept as originally specified — this value
-  didn't depend on missing data)
+- `HEALTH_POPULATION_THRESHOLD` = 3000
+- `EDUCATION_POPULATION_THRESHOLD` = 3000
+- `DISTANCE_THRESHOLD_KM` = 3.0 (unchanged from original spec — confirmed against real
+  centroid-to-facility distances for Rodriguez, Rizal; correctly separates Puray/Mascap
+  from the remaining 9 well-served barangays)
 
 ## UI Copy Reference
 
