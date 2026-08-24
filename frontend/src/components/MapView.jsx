@@ -12,6 +12,7 @@ import PopulationLevelsLayer from './PopulationLevelsLayer'
 import HealthFacilitiesLayer from './HealthFacilitiesLayer'
 import EducationFacilitiesLayer from './EducationFacilitiesLayer'
 import DetailPanel from './DetailPanel'
+import GapsLayer from './GapsLayer'
 
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -58,6 +59,7 @@ function MapView() {
   const [activeLayers, setActiveLayers] = useState(initialLayerState)
   const [selectedBarangay, setSelectedBarangay] = useState(null)
   const highlightedLayerRef = useRef(null)
+  const [selectedGap, setSelectedGap] = useState(null)
 
   useEffect(() => {
     fetch(`${API_BASE}/api/lgu/${LGU_ID}/boundaries`)
@@ -138,6 +140,8 @@ function MapView() {
         )}
         {activeLayers.healthFacilities && <HealthFacilitiesLayer />}
         {activeLayers.educationFacilities && <EducationFacilitiesLayer />}
+
+	<GapsLayer onGapClick={setSelectedGap} />
       </MapContainer>
 
       <LayerPanel activeLayers={activeLayers} setActiveLayers={setActiveLayers} />
