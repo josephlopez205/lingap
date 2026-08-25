@@ -13,6 +13,7 @@ import HealthFacilitiesLayer from './HealthFacilitiesLayer'
 import EducationFacilitiesLayer from './EducationFacilitiesLayer'
 import DetailPanel from './DetailPanel'
 import GapsLayer from './GapsLayer'
+import GapDetailCard from './GapDetailCard'
 
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -149,6 +150,11 @@ function MapView() {
       <DetailPanel
         selectedBarangay={selectedBarangay}
         onClose={() => setSelectedBarangay(null)}
+      />
+
+      <GapDetailCard
+        gap={selectedGap}
+        onClose={() =>setSelectedGap(null)}
       />
     </div>
   )
