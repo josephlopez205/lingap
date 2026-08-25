@@ -74,3 +74,14 @@ Confirmed via end-to-end test on [today's date]:
 - Mascap flagged for Health only (pop 5,436; 3.28km)
 - Severity scores verified by manual calculation against the documented formula
 - Idempotency confirmed: re-running analysis does not duplicate gap rows
+
+## Known Limitation: Centroid-Based Distance
+Distance from each barangay to its nearest facility is measured from the
+barangay's geometric centroid, not from population-weighted center of
+residence. This is a standard, defensible planning proxy, but it means:
+- Large or irregularly-shaped barangays may show a centroid distance that
+  doesn't reflect where most residents actually live
+- A barangay could have most residents living very close to a facility,
+  but still show a "gap" if its centroid geometrically falls far away
+  (or vice versa)
+This is disclosed to the user directly on each gap's detail card.

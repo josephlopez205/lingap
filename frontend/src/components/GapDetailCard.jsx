@@ -2,9 +2,9 @@
 
 const RULE_EXPLANATIONS = {
   HEALTH_ACCESS_POPULATION: (ev) =>
-    `This barangay has ${ev.population_total.toLocaleString()} residents, but the nearest health facility is ${ev.nearest_facility_km ?? 'unknown'} km away — exceeding the ${ev.distance_threshold_km}km threshold.`,
+    `This barangay has an estimated ${ev.population_total.toLocaleString()} residents. Measured from the barangay's geographic center, the nearest health facility is approximately ${ev.nearest_facility_km ?? 'unknown'} km away — beyond the ${ev.distance_threshold_km}km access standard used for this analysis.`,
   EDU_ACCESS_POPULATION: (ev) =>
-    `This barangay has ${ev.population_total.toLocaleString()} residents, but the nearest school is ${ev.nearest_facility_km ?? 'unknown'} km away — exceeding the ${ev.distance_threshold_km}km threshold.`,
+    `This barangay has an estimated ${ev.population_total.toLocaleString()} residents. Measured from the barangay's geographic center, the nearest school is approximately ${ev.nearest_facility_km ?? 'unknown'} km away — beyond the ${ev.distance_threshold_km}km access standard used for this analysis.`,
 }
 
 function GapDetailCard({ gap, onClose }) {
@@ -29,6 +29,12 @@ function GapDetailCard({ gap, onClose }) {
       <button style={{ padding: '8px 14px', background: '#2563eb', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer' }}>
         View Funding Matches
       </button>
+      <div style={{ marginTop: '10px', fontSize: '11px', color: '#999', borderTop: '1px solid #eee', paddingTop: '8px' }}>
+        Distance is estimated using each barangay's geographic centroid, not
+        population-weighted location. Large or irregularly-shaped barangays
+        may have residents closer to (or farther from) facilities than this
+        estimate suggests.
+      </div>
     </div>
   )
 }
