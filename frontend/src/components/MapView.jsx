@@ -14,6 +14,7 @@ import EducationFacilitiesLayer from './EducationFacilitiesLayer'
 import DetailPanel from './DetailPanel'
 import GapsLayer from './GapsLayer'
 import GapDetailCard from './GapDetailCard'
+import GapsListPanel from './GapsListPanel'
 
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -146,6 +147,7 @@ function MapView() {
       </MapContainer>
 
       <LayerPanel activeLayers={activeLayers} setActiveLayers={setActiveLayers} />
+      <GapsListPanel onSelectGap={setSelectedGap} />
 
       <DetailPanel
         selectedBarangay={selectedBarangay}
